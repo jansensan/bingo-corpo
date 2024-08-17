@@ -1,0 +1,15 @@
+{
+  "name": "bingo-corpo",
+  "description": "",
+  "version": "0.0.1",
+  "author": "Mat Janson Blanchet <mat@jansonblanchet.com> (https://mat.jansonblanchet.com/)",
+  "license": "UNLICENSED",
+  "scripts": {
+    "parse-csv": "node modules/convert-csv.js",
+    "parcel": "rm -rf dist .parcel-cache && parcel build src/scripts/bingo.js --dist-dir public/scripts --no-cache"
+  },
+  "devDependencies": {
+    "csv-parser": "^3.0.0",
+    "parcel": "^2.12.0"
+  }
+}

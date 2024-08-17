@@ -1,0 +1,31 @@
+FR,EN,design,marketing
+accessibilité,accessibility,TRUE,FALSE
+agilité,agility,TRUE,TRUE
+architecture d'information,information architecture,TRUE,FALSE
+atelier,workshop,TRUE,FALSE
+charge cognitive,cognitive load,TRUE,FALSE
+design sprint,design sprint,TRUE,FALSE
+design thinking,design thinking,TRUE,FALSE
+design trompeur,deceptive design,TRUE,FALSE
+empathie,empathy,TRUE,TRUE
+expérience utilisateur (UX),user experience (UX),TRUE,FALSE
+Figma,Figma,TRUE,FALSE
+gabarits,templates,TRUE,FALSE
+grille,grid,TRUE,FALSE
+intervenants,stakeholders,FALSE,TRUE
+KPI,KPI,FALSE,TRUE
+maquettes,mockups,TRUE,FALSE
+maquettes fils de fer,wireframes,TRUE,FALSE
+modèle de design,design pattern,TRUE,FALSE
+modèle mental,mental model,TRUE,FALSE
+normes graphiques,graphic guidelines,TRUE,FALSE
+remue-méninges,brainstorm,TRUE,FALSE
+sprint,sprint,TRUE,FALSE
+storytelling,storytelling,TRUE,TRUE
+synergie,synergy,FALSE,TRUE
+système de design,design system,TRUE,FALSE
+tableau de bord,dashboard,TRUE,FALSE
+test A/B,A/B testing,TRUE,TRUE
+tests d'utilisabilité,usability testing,TRUE,FALSE
+tests utilisateurs,user tests,TRUE,FALSE
+vélocité,velocity,TRUE,TRUE

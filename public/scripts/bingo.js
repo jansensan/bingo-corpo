@@ -1,0 +1,2 @@
+let t,e;e=[],e=function(){let t=[],e=function(){let t=BINGO_DATA.fr.design.slice(),e=BINGO_DATA.fr.marketing.slice(),n=t.slice();return e.forEach(t=>{n.includes(t)||n.push(t)}),n}();for(let n=0;n<25;n++){let n=Math.floor(Math.random()*e.length),l=e[n];t.push(l),e.splice(n,1)}return t}(),t=document.getElementById("bingoCard"),function(e){let n=0;e.forEach(e=>{let l=n%2==0,d=document.createElement("button");d.type="button",d.innerText=e,d.classList.add("bingo-button"),l?d.classList.add("even"):d.classList.add("odd"),t.appendChild(d),n++})}(e);
+//# sourceMappingURL=bingo.js.map
