@@ -5,13 +5,22 @@ body {
   font-family: sans-serif;
 }
 
+h1 {
+  line-height: 1;
+}
+
+a {
+  text-decoration-thickness: 1pt;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
 .container {
   margin: 0 auto;
   width: 500px;
-}
-
-h1 {
-  line-height: 1;
 }
 
 .bingo-card {
@@ -73,6 +82,11 @@ h1 {
   content: '❌';
   font-size: 32pt;
 }
+
+.source-code {
+  font-size: 9pt;
+}
+
 
 .veil {
   position: fixed;
