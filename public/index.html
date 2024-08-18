@@ -9,8 +9,22 @@
   <body>
     <div class="container">
       <h1>Bingo Corpo</h1>
+      <div class="spacing-32"></div>
       <div id="bingoCard" class="bingo-card"></div>
     </div>
+
+    <div class="veil hidden" id="veil"></div>
+
+    <dialog class="bingo-dialog">
+      <p class="bingo-heading">Bingo!</p>
+      <div class="spacing-48"></div>
+      <form method="dialog">
+        <button
+          id="restartGameButton"
+          class="primary-button"
+        >Recommencer</button>
+      </form>
+    </dialog>
 
     <script src="scripts/bingo-data.js"></script>
     <script src="scripts/bingo.js"></script>
