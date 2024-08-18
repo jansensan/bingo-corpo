@@ -2,7 +2,12 @@
 const NUM_COLS = 5;
 const NUM_ROWS = 5;
 const NUM_CELLS = NUM_COLS * NUM_ROWS;
-
+const DISABLED = 'disabled';
+const BingoTypes = {
+  ROW: 'row',
+  COLUMN: 'column',
+  DIAGONAL: 'diagonal',
+};
 
 // variables
 let terms = [];
@@ -12,6 +17,10 @@ let rows = []; // contains buttons
 // dom elements
 let bingoCard;
 
+let bingoDialog;
+let veil;
+let restartGameButton;
+
 
 // auto init
 initBingo();
@@ -20,11 +29,19 @@ initBingo();
 // methods definition
 function initBingo() {
   terms = parseData();
-
   getDOMElements();
   addButtons(terms);
 }
 
+function getDOMElements() {
+  bingoCard = document.getElementById('bingoCard');
+  bingoDialog = document.getElementById('bingoDialog');
+  veil = document.getElementById('veil');
+  restartGameButton = document.getElementById('restartGameButton');
+}
+
+
+// data management
 function parseData() {
   const selectedTerms = []
 
@@ -40,10 +57,22 @@ function parseData() {
   return selectedTerms;
 }
 
-function getDOMElements() {
-  bingoCard = document.getElementById('bingoCard');
+function copyData() {
+  const design = BINGO_DATA.fr.design.slice();
+  const marketing = BINGO_DATA.fr.marketing.slice();
+
+  let copy = design.slice();
+  marketing.forEach(element => {
+    if (!copy.includes(element)) {
+      copy.push(element);
+    }
+  });
+
+  return copy;
 }
 
+
+// card creation
 function addButtons(terms) {
   let index = 0;
   let rowId = -1;
@@ -100,19 +129,129 @@ function createTile(options) {
 
 function onTileClicked(event) {
   const tile = event.target;
-  tile.setAttribute('disabled', 'disabled');
+  tile.setAttribute(DISABLED, DISABLED);
+
+  const response = checkForBingo();
+  if (response.bingo) {
+    showGameComplete();
+  }
 }
 
-function copyData() {
-  const design = BINGO_DATA.fr.design.slice();
-  const marketing = BINGO_DATA.fr.marketing.slice();
 
-  let copy = design.slice();
-  marketing.forEach(element => {
-    if (!copy.includes(element)) {
-      copy.push(element);
+// game flow
+function checkForBingo() {
+  const numTiles = 5;
+  const colsValues = [[], [], [], [], []];
+
+  let response = {
+    bingo: false,
+    type: null,
+  };
+
+  // go through rows
+  let rowIndex = 0;
+  rows.forEach(row => {
+    const rowValues = [];
+    const tiles = row.getElementsByClassName('bingo-tile');
+    for (let i = 0; i < numTiles; i++) {
+      // save tile value in array for row
+      const tile = tiles[i];
+      rowValues.push(isTileElementStamped(tile));
+
+      // save tile value in array for column, to check later
+      colsValues[i][rowIndex] = isTileElementStamped(tile);
+    }
+
+    // check for bingo at row
+    if (rowValues.every(isItemTrue)) {
+      response.bingo = true;
+      response.type = BingoTypes.ROW;
+    }
+
+    rowIndex++;
+  });
+
+  if (response.bingo) {
+    return response;
+  }
+
+
+  // go through columns
+  colsValues.forEach(values => {
+    // check for bingo at col
+    if (values.every(isItemTrue)) {
+      response.bingo = true;
+      response.type = BingoTypes.COLUMN;
     }
   });
 
-  return copy;
+  if (response.bingo) {
+    return response;
+  }
+
+
+  // check diagonals - top-left → bottom right
+  const diagonal1 = [];
+  rowIndex = 0;
+  rows.forEach(row => {
+    const tiles = row.getElementsByClassName('bingo-tile');
+    diagonal1.push(isTileElementStamped(tiles[rowIndex]));
+    rowIndex++;
+  });
+
+  if (diagonal1.every(isItemTrue)) {
+    response.bingo = true;
+    response.type = BingoTypes.DIAGONAL;
+  }
+
+  if (response.bingo) {
+    return response;
+  }
+
+
+  // check diagonals - top-right → bottom left
+  const diagonal2 = [];
+  rowIndex = 0;
+  rows.forEach(row => {
+    const tiles = row.getElementsByClassName('bingo-tile');
+    const tileIndex = numTiles - rowIndex - 1;
+    diagonal2.push(isTileElementStamped(tiles[tileIndex]));
+    rowIndex++;
+  });
+
+  if (diagonal2.every(isItemTrue)) {
+    response.bingo = true;
+    response.type = BingoTypes.DIAGONAL;
+  }
+
+  if (response.bingo) {
+    return response;
+  }
+
+
+  // no bingo...
+  return response;
+}
+
+function showGameComplete() {
+  veil.classList.remove('hidden');
+  bingoDialog.showModal();
+  restartGameButton.addEventListener('click', onDismissDialog);
+}
+
+function onDismissDialog() {
+  location.reload();
+}
+
+
+// utils
+function isTileElementStamped(tile) {
+  if (!tile) {
+    return false;
+  }
+  return tile.getAttribute(DISABLED) === DISABLED;
+}
+
+function isItemTrue(value) {
+  return value === true;
 }
