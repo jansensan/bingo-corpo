@@ -236,10 +236,16 @@ function checkForBingo() {
 function showGameComplete() {
   veil.classList.remove('hidden');
   bingoDialog.showModal();
+
+  veil.addEventListener('click', onDismissDialog);
   restartGameButton.addEventListener('click', onDismissDialog);
 }
 
 function onDismissDialog() {
+  restartGame();
+}
+
+function restartGame() {
   location.reload();
 }
 
