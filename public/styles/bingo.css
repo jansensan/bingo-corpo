@@ -1,3 +1,8 @@
+:root {
+  --interactive-color: #0000EE;
+}
+
+
 body {
   background-color: #fafafa;
   padding: 16px 0 32px 0;
@@ -11,6 +16,7 @@ h1 {
 
 a {
   text-decoration-thickness: 1pt;
+  color: var(--interactive-color);
 }
 
 a:hover {
@@ -124,7 +130,7 @@ a:hover {
 }
 
 .primary-button {
-  background-color: #757575;
+  background-color: var(--interactive-color);;
   border-radius: 2px;
   border: none;
   cursor: pointer;
