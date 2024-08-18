@@ -6,6 +6,7 @@ const NUM_CELLS = NUM_COLS * NUM_ROWS;
 
 // variables
 let terms = [];
+let rows = []; // contains buttons
 
 
 // dom elements
@@ -45,26 +46,55 @@ function getDOMElements() {
 
 function addButtons(terms) {
   let index = 0;
+  let rowId = -1;
+
   terms.forEach(term => {
-    // if (index % NUM_COLS === 0) {
-      // console.log('create new row');
-    // }
+    // manage row
+    const newRowId = Math.floor(index / NUM_COLS);
+    if (newRowId !== rowId) {
+      rowId = newRowId;
 
-    const isEven = index % 2 === 0;
+      const row = document.createElement('div');
+      row.classList.add('tile-row');
+      row.dataset.rowId = rowId;
 
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.innerText = term;
-    b.classList.add('bingo-button');
-    if (isEven) {
-      b.classList.add('even');
-    } else {
-      b.classList.add('odd');
+      rows.push(row);
     }
-    bingoCard.appendChild(b);
+
+    const tile = createTile({ index, term });
+    rows[rowId].appendChild(tile);
 
     index++;
   });
+
+  // add rows
+
+  rows.forEach(row => {
+    bingoCard.appendChild(row);
+  });
+}
+
+function createTile(options) {
+  const { index, term } = options;
+
+  const tile = document.createElement('button');
+  tile.type = 'button';
+  tile.innerText = term;
+  tile.classList.add('bingo-tile');
+
+  const colId = index % NUM_COLS;
+  const rowId = Math.floor(index / NUM_COLS);
+  tile.dataset.col = colId;
+  tile.dataset.row = rowId;
+
+  const isEven = index % 2 === 0;
+  if (isEven) {
+    tile.classList.add('even');
+  } else {
+    tile.classList.add('odd');
+  }
+
+  return tile;
 }
 
 function copyData() {
