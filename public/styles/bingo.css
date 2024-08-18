@@ -37,6 +37,7 @@ body {
   font-size: 9pt;
   font-weight: bold;
   text-align: center;
+  color: #000;
 }
 
 .bingo-tile.even {
@@ -45,4 +46,17 @@ body {
 
 .bingo-tile.odd {
   background-color: #eee;
+}
+
+.bingo-tile:disabled {
+  cursor: not-allowed;
+  color: #757575;
+}
+
+.bingo-tile:disabled:after {
+  position: absolute;
+  opacity: 33%;
+
+  content: '❌';
+  font-size: 32pt;
 }

@@ -62,6 +62,7 @@ function addButtons(terms) {
     }
 
     const tile = createTile({ index, term });
+    tile.addEventListener('click', onTileClicked);
     rows[rowId].appendChild(tile);
 
     index++;
@@ -95,6 +96,11 @@ function createTile(options) {
   }
 
   return tile;
+}
+
+function onTileClicked(event) {
+  const tile = event.target;
+  tile.setAttribute('disabled', 'disabled');
 }
 
 function copyData() {
