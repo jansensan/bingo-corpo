@@ -9,10 +9,13 @@ body {
 
 .bingo-card {
   display: grid;
+  position: relative;
 
-  border: 1px solid grey;
-  width: 500px;
+  left: -8px;
+  border: 8px solid #fafafa;
   height: 500px;
+  outline: 2px solid #eee;
+  width: 500px;
 }
 
 .tile-row {
