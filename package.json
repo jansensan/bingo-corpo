@@ -6,10 +6,20 @@
   "license": "UNLICENSED",
   "scripts": {
     "parse-csv": "node modules/convert-csv.js",
-    "parcel": "rm -rf dist .parcel-cache && parcel build src/scripts/bingo.js --dist-dir public/scripts --no-cache"
+    "build:styles": "gulp styles",
+    "build:scripts": "rm -rf dist .parcel-cache && parcel build src/scripts/bingo.js --dist-dir public/scripts --no-cache",
+    "build": "npm run build:styles && npm run build:scripts"
   },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "csv-parser": "^3.0.0",
-    "parcel": "^2.12.0"
+    "node-sass": "^9.0.0",
+    "parcel": "^2.12.0",
+    "sass": "^1.58.3"
   }
 }
