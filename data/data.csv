@@ -1,31 +1,84 @@
-FR,EN,design,marketing
-accessibilité,accessibility,TRUE,FALSE
-agilité,agility,TRUE,TRUE
-architecture d'information,information architecture,TRUE,FALSE
-atelier,workshop,TRUE,FALSE
-charge cognitive,cognitive load,TRUE,FALSE
-design sprint,design sprint,TRUE,FALSE
-design thinking,design thinking,TRUE,FALSE
-design trompeur,deceptive design,TRUE,FALSE
-empathie,empathy,TRUE,TRUE
-expérience utilisateur (UX),user experience (UX),TRUE,FALSE
-Figma,Figma,TRUE,FALSE
-gabarits,templates,TRUE,FALSE
-grille,grid,TRUE,FALSE
-intervenants,stakeholders,FALSE,TRUE
-KPI,KPI,FALSE,TRUE
-maquettes,mockups,TRUE,FALSE
-maquettes fils de fer,wireframes,TRUE,FALSE
-modèle de design,design pattern,TRUE,FALSE
-modèle mental,mental model,TRUE,FALSE
-normes graphiques,graphic guidelines,TRUE,FALSE
-remue-méninges,brainstorm,TRUE,FALSE
-sprint,sprint,TRUE,FALSE
-storytelling,storytelling,TRUE,TRUE
-synergie,synergy,FALSE,TRUE
-système de design,design system,TRUE,FALSE
-tableau de bord,dashboard,TRUE,FALSE
-test A/B,A/B testing,TRUE,TRUE
-tests d'utilisabilité,usability testing,TRUE,FALSE
-tests utilisateurs,user tests,TRUE,FALSE
-vélocité,velocity,TRUE,TRUE
+FR,EN,design,marketing,tech
+3 sec. / 30 sec. / 3 min.,3 secs / 30 secs / 3 mins,FALSE,TRUE,FALSE
+accessibilité,accessibility,TRUE,FALSE,TRUE
+agilité,agility,TRUE,TRUE,TRUE
+algorithme,algorithm,FALSE,FALSE,TRUE
+analytique,analytics,FALSE,TRUE,FALSE
+architecture d'information,information architecture,TRUE,FALSE,FALSE
+atelier,workshop,TRUE,FALSE,FALSE
+audience cible,target audience,FALSE,TRUE,FALSE
+charge cognitive,cognitive load,TRUE,FALSE,FALSE
+chatbot,chatbot,FALSE,FALSE,TRUE
+CMS (content management system),CMS (content management system),FALSE,FALSE,TRUE
+commerce électronique (e-commerce),e-commerce,FALSE,TRUE,TRUE
+conception axée sur l'utilisateur,user-centred design,TRUE,TRUE,FALSE
+conception réactive (responsive design),responsive design,TRUE,TRUE,TRUE
+conversion,conversion,FALSE,TRUE,FALSE
+CRM (customer relationship management),CRM (customer relationship management),FALSE,TRUE,FALSE
+CTA (call to action),CTA (call to action),TRUE,TRUE,TRUE
+CTR (clickthrough rate),CTR (clickthrough rate),FALSE,TRUE,FALSE
+CX (customer experience),CX (customer experience),TRUE,TRUE,FALSE
+design sprint,design sprint,TRUE,FALSE,FALSE
+design thinking,design thinking,TRUE,FALSE,FALSE
+design trompeur,deceptive design,TRUE,FALSE,TRUE
+diversité / équité / inclusion,"DEI (diversity, equity, and inclusion)",TRUE,TRUE,TRUE
+empathie,empathy,TRUE,TRUE,TRUE
+engagement,engagement,FALSE,TRUE,FALSE
+entonnoir de conversion,conversion funnel,FALSE,TRUE,FALSE
+Figma,Figma,TRUE,FALSE,TRUE
+gabarits,templates,TRUE,FALSE,TRUE
+grille,grid,TRUE,FALSE,TRUE
+IA (intelligence artificielle),AI (artificial intelligence),FALSE,TRUE,TRUE
+idéation,ideation,TRUE,TRUE,FALSE
+image de marque,brand identity,TRUE,TRUE,FALSE
+influenceur,influencer,FALSE,TRUE,FALSE
+infographique,infographic,TRUE,TRUE,FALSE
+intention de marque,brand purpose,FALSE,TRUE,FALSE
+intervenants,stakeholders,FALSE,TRUE,FALSE
+KPI (key performance indicator),KPI (key performance indicator),FALSE,TRUE,FALSE
+leader d'opinion,thought leader,FALSE,TRUE,FALSE
+livrables,deliverables,TRUE,TRUE,TRUE
+maquettes,mockups,TRUE,FALSE,FALSE
+maquettes fils de fer,wireframes,TRUE,FALSE,FALSE
+marketing de contenu,content marketing,FALSE,TRUE,FALSE
+marketing direct,direct marketing,FALSE,TRUE,FALSE
+marketing expérientiel,experiential marketing,FALSE,TRUE,FALSE
+médias acquis,earned media,FALSE,TRUE,FALSE
+mégadonnées (big data),big data,FALSE,TRUE,TRUE
+métriques,metrics,FALSE,TRUE,FALSE
+ML (machine learning),ML (machine learning),FALSE,TRUE,TRUE
+mobile-first,mobile-first,TRUE,TRUE,TRUE
+modèle de design,design pattern,TRUE,FALSE,FALSE
+modèle mental,mental model,TRUE,FALSE,FALSE
+normes graphiques,graphic guidelines,TRUE,FALSE,FALSE
+omnicanal,omnichannel,FALSE,TRUE,FALSE
+parcours client,customer journey,TRUE,TRUE,FALSE
+partenaires,partners,FALSE,TRUE,FALSE
+personas,personas,TRUE,TRUE,FALSE
+piège à clics (clickbait),clickbait,FALSE,TRUE,FALSE
+points de friction,pain points,FALSE,TRUE,FALSE
+portée organique (organic reach),organic reach,FALSE,TRUE,FALSE
+preuve sociale (social proof),social proof,FALSE,TRUE,FALSE
+publication croisée (cross-posting),cross-posting,FALSE,TRUE,FALSE
+remue-méninges,brainstorm,TRUE,TRUE,TRUE
+ROI (return on investment),ROI (return on investment),FALSE,TRUE,FALSE
+s'arrimer,align with,FALSE,TRUE,FALSE
+SEO (search engine optimization),SEO (search engine optimization),FALSE,TRUE,TRUE
+SERP (search engine results page),SERP (search engine results page),FALSE,TRUE,TRUE
+sprint,sprint,TRUE,FALSE,TRUE
+storytelling,storytelling,TRUE,TRUE,FALSE
+stratégie de contenu,content strategy,TRUE,TRUE,FALSE
+synergie,synergy,FALSE,TRUE,FALSE
+système de design,design system,TRUE,TRUE,TRUE
+tableau de bord,dashboard,TRUE,TRUE,TRUE
+taux de rebond (bounce rate),bounce rate,FALSE,TRUE,FALSE
+témoins (cookies),cookies,FALSE,TRUE,TRUE
+test A/B,A/B testing,TRUE,TRUE,TRUE
+tests d'utilisabilité,usability testing,TRUE,FALSE,TRUE
+tests utilisateurs,user tests,TRUE,FALSE,TRUE
+transformation numérique,digital transformation,FALSE,TRUE,FALSE
+transversal,transversal,FALSE,TRUE,FALSE
+UI (user interface),UI (user interface),TRUE,FALSE,FALSE
+UX (expérience utilisateur),UX (user experience),TRUE,FALSE,FALSE
+vélocité,velocity,TRUE,TRUE,FALSE
+parcours utilisateur,user journey,TRUE,FALSE,FALSE
