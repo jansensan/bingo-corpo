@@ -140,6 +140,11 @@ a:hover {
   }
 }
 
+.bingo-tile:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1pt;
+}
+
 .bingo-tile.even {
   background-color: var(--grey-10);
 }
@@ -148,12 +153,11 @@ a:hover {
   background-color: var(--grey-15);
 }
 
-.bingo-tile:disabled {
-  cursor: not-allowed;
+.bingo-tile[aria-selected="true"] {
   color: var(--grey-50);
 }
 
-.bingo-tile:disabled:after {
+.bingo-tile[aria-selected="true"]:after {
   position: absolute;
   opacity: 33%;
 

@@ -2,7 +2,10 @@
 const NUM_COLS = 5;
 const NUM_ROWS = 5;
 const NUM_CELLS = NUM_COLS * NUM_ROWS;
+
 const DISABLED = 'disabled';
+const SELECTED = 'aria-selected';
+
 const BingoTypes = {
   ROW: 'row',
   COLUMN: 'column',
@@ -116,6 +119,7 @@ function createTile(options) {
   const rowId = Math.floor(index / NUM_COLS);
   tile.dataset.col = colId;
   tile.dataset.row = rowId;
+  tile.setAttribute(SELECTED, false);
 
   const isEven = index % 2 === 0;
   if (isEven) {
@@ -129,7 +133,10 @@ function createTile(options) {
 
 function onTileClicked(event) {
   const tile = event.target;
-  tile.setAttribute(DISABLED, DISABLED);
+
+  const isTileSelected = isTrue(tile.getAttribute(SELECTED));
+  const newValue = !isTileSelected;
+  tile.setAttribute(SELECTED, newValue);
 
   const response = checkForBingo();
   if (response.bingo) {
@@ -255,9 +262,21 @@ function isTileElementStamped(tile) {
   if (!tile) {
     return false;
   }
-  return tile.getAttribute(DISABLED) === DISABLED;
+  return isTrue(tile.getAttribute(SELECTED));
 }
 
 function isItemTrue(value) {
   return value === true;
+}
+
+function isTrue(value) {
+  const valueType = typeof value;
+
+  if (valueType === 'string') {
+    return value.toLowerCase() === 'true';
+  } else if (valueType === 'boolean') {
+    return value === true;
+  } else {
+    false;
+  }
 }
