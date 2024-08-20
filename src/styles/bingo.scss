@@ -167,6 +167,41 @@ a:hover {
   text-shadow: 0 0 0 var(--interactive-color);
 }
 
+.aligned-right {
+  text-align: right; // TODO: improve way to alight right
+}
+
+.restart-button {
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+
+  font-size: 9pt;
+  text-decoration: none;
+}
+
+.restart-button .icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+}
+
+.restart-button .icon svg {
+  position: relative;
+}
+
+.restart-button .label {
+  display: inline-flex;
+  margin: 5px 4px 4px 4px;
+
+  text-decoration: underline;
+  text-decoration-thickness: 1pt;
+}
+
+.restart-button:hover .label {
+  text-decoration: none;
+}
+
 .source-code {
   font-size: 9pt;
 }
