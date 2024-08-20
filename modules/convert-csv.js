@@ -65,20 +65,24 @@ function parseCSV(data) {
 
   const parsed = { fr, en };
 
-  writeJSON(parsed);
+  writeDataFile(parsed);
 }
 
-function writeJSON(data) {
-  const jsonPath = 'src/data/data.json';
+function writeDataFile(data) {
+  const jsonData = JSON.stringify(data, null, 2);
+
+  const jsDataPath = 'public/scripts/bingo-data.js';
+  const jsData = `const BINGO_DATA = ${ jsonData };`;
+
   fs.writeFile(
-    jsonPath,
-    JSON.stringify(data, null, 2),
+    jsDataPath,
+    jsData,
     UTF8,
     (error) => {
       if (error) {
-        console.log(`Error saving "${ jsonPath }": ${ error }`);
+        console.log(`Error saving "${ jsDataPath }": ${ error }`);
       } else {
-        console.log('json saved');
+        console.log('data saved');
       };
     }
   );

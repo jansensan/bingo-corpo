@@ -5,7 +5,7 @@
   "author": "Mat Janson Blanchet <mat@jansonblanchet.com> (https://mat.jansonblanchet.com/)",
   "license": "UNLICENSED",
   "scripts": {
-    "parse-csv": "node modules/convert-csv.js",
+    "convert:csv": "node modules/convert-csv.js",
     "build:styles": "gulp styles",
     "build:scripts": "rm -rf dist .parcel-cache && parcel build src/scripts/bingo.js --dist-dir public/scripts --no-cache",
     "build": "npm run build:styles && npm run build:scripts"
