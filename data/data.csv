@@ -1,16 +1,18 @@
-FR,EN,design,marketing,tech
+FR,EN,Design (46),Marketing (65),Tech (32)
 3 sec. / 30 sec. / 3 min.,3 secs / 30 secs / 3 mins,FALSE,TRUE,FALSE
 accessibilité,accessibility,TRUE,FALSE,TRUE
 agilité,agility,TRUE,TRUE,TRUE
 algorithme,algorithm,FALSE,FALSE,TRUE
 analytique,analytics,FALSE,TRUE,FALSE
 architecture d'information,information architecture,TRUE,FALSE,FALSE
+arrimage,alignment,FALSE,TRUE,FALSE
 atelier,workshop,TRUE,FALSE,FALSE
 audience cible,target audience,FALSE,TRUE,FALSE
 charge cognitive,cognitive load,TRUE,FALSE,FALSE
 chatbot,chatbot,FALSE,FALSE,TRUE
 CMS (content management system),CMS (content management system),FALSE,FALSE,TRUE
 commerce électronique (e-commerce),e-commerce,FALSE,TRUE,TRUE
+composantes,components,TRUE,FALSE,TRUE
 conception axée sur l'utilisateur,user-centred design,TRUE,TRUE,FALSE
 conception réactive (responsive design),responsive design,TRUE,TRUE,TRUE
 conversion,conversion,FALSE,TRUE,FALSE
@@ -31,9 +33,12 @@ grille,grid,TRUE,FALSE,TRUE
 IA (intelligence artificielle),AI (artificial intelligence),FALSE,TRUE,TRUE
 idéation,ideation,TRUE,TRUE,FALSE
 image de marque,brand identity,TRUE,TRUE,FALSE
+implication,involvement,FALSE,TRUE,FALSE
+imputabilité,imputability,FALSE,TRUE,FALSE
 influenceur,influencer,FALSE,TRUE,FALSE
 infographique,infographic,TRUE,TRUE,FALSE
 intention de marque,brand purpose,FALSE,TRUE,FALSE
+intentionalité,intentionality,TRUE,TRUE,FALSE
 intervenants,stakeholders,FALSE,TRUE,FALSE
 KPI (key performance indicator),KPI (key performance indicator),FALSE,TRUE,FALSE
 leader d'opinion,thought leader,FALSE,TRUE,FALSE
@@ -53,16 +58,18 @@ modèle mental,mental model,TRUE,FALSE,FALSE
 normes graphiques,graphic guidelines,TRUE,FALSE,FALSE
 omnicanal,omnichannel,FALSE,TRUE,FALSE
 parcours client,customer journey,TRUE,TRUE,FALSE
+parcours utilisateur,user journey,TRUE,FALSE,FALSE
 partenaires,partners,FALSE,TRUE,FALSE
 personas,personas,TRUE,TRUE,FALSE
 piège à clics (clickbait),clickbait,FALSE,TRUE,FALSE
+plateforme,framework,FALSE,TRUE,TRUE
 points de friction,pain points,FALSE,TRUE,FALSE
 portée organique (organic reach),organic reach,FALSE,TRUE,FALSE
 preuve sociale (social proof),social proof,FALSE,TRUE,FALSE
 publication croisée (cross-posting),cross-posting,FALSE,TRUE,FALSE
+refonte,redesign,TRUE,TRUE,FALSE
 remue-méninges,brainstorm,TRUE,TRUE,TRUE
 ROI (return on investment),ROI (return on investment),FALSE,TRUE,FALSE
-s'arrimer,align with,FALSE,TRUE,FALSE
 SEO (search engine optimization),SEO (search engine optimization),FALSE,TRUE,TRUE
 SERP (search engine results page),SERP (search engine results page),FALSE,TRUE,TRUE
 sprint,sprint,TRUE,FALSE,TRUE
@@ -79,6 +86,6 @@ tests utilisateurs,user tests,TRUE,FALSE,TRUE
 transformation numérique,digital transformation,FALSE,TRUE,FALSE
 transversal,transversal,FALSE,TRUE,FALSE
 UI (user interface),UI (user interface),TRUE,FALSE,FALSE
+utilisateur,user,TRUE,TRUE,TRUE
 UX (expérience utilisateur),UX (user experience),TRUE,FALSE,FALSE
 vélocité,velocity,TRUE,TRUE,FALSE
-parcours utilisateur,user journey,TRUE,FALSE,FALSE
