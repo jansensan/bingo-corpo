@@ -1,4 +1,4 @@
-FR,EN,Design (46),Marketing (65),Tech (32)
+FR,EN,Design (46),Marketing (66),Tech (32)
 3 sec. / 30 sec. / 3 min.,3 secs / 30 secs / 3 mins,FALSE,TRUE,FALSE
 accessibilité,accessibility,TRUE,FALSE,TRUE
 agilité,agility,TRUE,TRUE,TRUE
@@ -62,6 +62,7 @@ parcours utilisateur,user journey,TRUE,FALSE,FALSE
 partenaires,partners,FALSE,TRUE,FALSE
 personas,personas,TRUE,TRUE,FALSE
 piège à clics (clickbait),clickbait,FALSE,TRUE,FALSE
+plan d'action,action plan,FALSE,TRUE,FALSE
 plateforme,framework,FALSE,TRUE,TRUE
 points de friction,pain points,FALSE,TRUE,FALSE
 portée organique (organic reach),organic reach,FALSE,TRUE,FALSE

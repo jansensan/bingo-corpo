@@ -2,7 +2,7 @@
 
 Sources pour le mini-jeu de bingo avec des buzzword de design et de marketing.
 
-http://bingo-corpo.netlify.app
+https://mat.jansonblanchet.com/fr/bingo-corpo/
 
 
 ## Contribuer à la liste des termes

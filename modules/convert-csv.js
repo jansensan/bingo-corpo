@@ -9,6 +9,7 @@ const FR_COL = 0;
 const EN_COL = 1;
 const DESIGN_COL = 2;
 const MARKETING_COL = 3;
+const TECH_COL = 4;
 
 
 // auto init
@@ -32,12 +33,14 @@ function readCSV() {
 
 function parseCSV(data) {
   const fr = {
-    design: [],
     marketing: [],
+    design: [],
+    tech: [],
   };
   const en = {
     design: [],
     marketing: [],
+    tech: [],
   };
 
   const lines = data.split(NL);
@@ -57,6 +60,12 @@ function parseCSV(data) {
       if (isTrue(array[MARKETING_COL])) {
         fr.marketing.push(array[FR_COL]);
         en.marketing.push(array[EN_COL]);
+      }
+
+      // tech
+      if (isTrue(array[TECH_COL])) {
+        fr.tech.push(array[FR_COL]);
+        en.tech.push(array[EN_COL]);
       }
     }
 

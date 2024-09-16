@@ -1,4 +1,7 @@
 // constants
+const FR = 'fr';
+const EN = 'en';
+
 const NUM_COLS = 5;
 const NUM_ROWS = 5;
 const NUM_CELLS = NUM_COLS * NUM_ROWS;
@@ -13,6 +16,7 @@ const BingoTypes = {
 };
 
 // variables
+let lang = '';
 let terms = [];
 let rows = []; // contains buttons
 
@@ -31,6 +35,7 @@ initBingo();
 
 // methods definition
 function initBingo() {
+  lang = document.documentElement.lang
   terms = parseData();
   getDOMElements();
   addButtons(terms);
@@ -60,16 +65,58 @@ function parseData() {
   return selectedTerms;
 }
 
-function copyData() {
-  const design = BINGO_DATA.fr.design.slice();
-  const marketing = BINGO_DATA.fr.marketing.slice();
+function getGameScope() {
+  const currentUrl = new URL(window.location.href);
+  const searchParams = new URLSearchParams(currentUrl.searchParams);
 
-  let copy = design.slice();
-  marketing.forEach(element => {
-    if (!copy.includes(element)) {
-      copy.push(element);
+  let scope;
+  if (lang === FR) {
+    const scopeFR = searchParams.get('sujets');
+    if (scopeFR) {
+      scope = scopeFR.split(',');
     }
-  });
+
+  } else if (lang === EN) {
+    const scopeEN = searchParams.get('scope');
+    if (scopeEN) {
+      scope = scopeEN.split(',');
+    }
+  }
+
+  return scope;
+}
+
+function copyData() {
+  const scope = getGameScope();
+
+  let copy = [];
+
+  if (
+    (scope && scope.includes('marketing'))
+    || scope === undefined
+  ) {
+    const marketing = BINGO_DATA.fr.marketing.slice();
+    copy.push(...marketing.slice());
+  }
+
+  if (scope && scope.includes('design')) {
+    const design = BINGO_DATA.fr.design.slice();
+    design.forEach(element => {
+      if (!copy.includes(element)) {
+        copy.push(element);
+      }
+    });
+  }
+
+  // tech
+  if (scope && scope.includes('tech')) {
+    const tech = BINGO_DATA.fr.tech.slice();
+    tech.forEach(element => {
+      if (!copy.includes(element)) {
+        copy.push(element);
+      }
+    });
+  }
 
   return copy;
 }
