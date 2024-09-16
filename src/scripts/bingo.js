@@ -26,6 +26,10 @@ let bingoCard;
 
 let bingoDialog;
 let veil;
+
+let marketingCB;
+let designCB;
+let techCB;
 let restartGameButton;
 
 
@@ -36,15 +40,22 @@ initBingo();
 // methods definition
 function initBingo() {
   lang = document.documentElement.lang
-  terms = parseData();
   getDOMElements();
+  terms = parseData();
   addButtons(terms);
+  addOptionsListeners();
 }
 
 function getDOMElements() {
   bingoCard = document.getElementById('bingoCard');
+
   bingoDialog = document.getElementById('bingoDialog');
   veil = document.getElementById('veil');
+
+  marketingCB = document.getElementById('marketingCB');
+  designCB = document.getElementById('designCB');
+  techCB = document.getElementById('techCB');
+
   restartGameButton = document.getElementById('restartGameButton');
 }
 
@@ -97,6 +108,7 @@ function copyData() {
   ) {
     const marketing = BINGO_DATA.fr.marketing.slice();
     copy.push(...marketing.slice());
+    marketingCB.checked = 'checked';
   }
 
   if (scope && scope.includes('design')) {
@@ -106,6 +118,7 @@ function copyData() {
         copy.push(element);
       }
     });
+    designCB.checked = 'checked';
   }
 
   // tech
@@ -116,9 +129,48 @@ function copyData() {
         copy.push(element);
       }
     });
+    techCB.checked = 'checked';
   }
 
   return copy;
+}
+
+
+// game options management
+function addOptionsListeners() {
+  marketingCB.addEventListener('change', onOptionChanged);
+  designCB.addEventListener('change', onOptionChanged);
+  techCB.addEventListener('change', onOptionChanged);
+}
+
+function onOptionChanged() {
+  console.info('--- onOptionChanged ---');
+  let scope = [];
+
+  // check options
+  if (marketingCB.checked) {
+    scope.push('marketing');
+  }
+  if (designCB.checked) {
+    scope.push('design');
+  }
+  if (techCB.checked) {
+    scope.push('tech');
+  }
+
+  console.log('scope:', scope);
+  let searchParamsValue = scope.join(',');
+  if (!scope.length) {
+    searchParamsValue = 'marketing';
+  }
+  console.log('searchParamsValue:', searchParamsValue);
+
+  // push state to url
+  // TODO: https://stackoverflow.com/questions/10970078/modifying-a-query-string-without-reloading-the-page
+  // if (history.pushState) {
+    // var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?myNewUrlQuery=1';
+    // window.history.pushState({path:newurl},'',newurl);
+  // }
 }
 
 

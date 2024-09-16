@@ -171,6 +171,27 @@ a:hover {
   text-align: right; // TODO: improve way to alight right
 }
 
+.game-scope-form {
+  legend {
+    font-weight: bold;
+    font-size: 9pt;
+  }
+
+  input[type="checkbox"]{
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] + label {
+    cursor: pointer;
+    font-size: 9pt;
+  }
+
+  .inline-form-control {
+    display: inline-block;
+    margin: 8px 8px 8px 0;
+  }
+}
+
 .restart-button {
   display: inline-flex;
   padding: 0;
