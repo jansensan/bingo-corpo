@@ -171,6 +171,12 @@ a:hover {
   text-align: right; // TODO: improve way to alight right
 }
 
+
+.options {
+  display: flex;
+  justify-content: space-between;
+}
+
 .game-scope-form {
   legend {
     display: inline-block;
@@ -193,7 +199,7 @@ a:hover {
   }
 }
 
-.restart-button {
+.restart-link {
   display: inline-flex;
   padding: 0;
   margin: 0;
@@ -202,17 +208,17 @@ a:hover {
   text-decoration: none;
 }
 
-.restart-button .icon {
+.restart-link .icon {
   display: inline-flex;
   width: 20px;
   height: 20px;
 }
 
-.restart-button .icon svg {
+.restart-link .icon svg {
   position: relative;
 }
 
-.restart-button .label {
+.restart-link .label {
   display: inline-flex;
   margin: 5px 4px 4px 4px;
 
@@ -220,9 +226,10 @@ a:hover {
   text-decoration-thickness: 1pt;
 }
 
-.restart-button:hover .label {
+.restart-link:hover .label {
   text-decoration: none;
 }
+
 
 .source-code {
   font-size: 9pt;
