@@ -1,4 +1,4 @@
-FR,EN,Design (46),Marketing (66),Tech (32)
+FR,EN,Design (55),Marketing (72),Tech (37)
 3 sec. / 30 sec. / 3 min.,3 secs / 30 secs / 3 mins,FALSE,TRUE,FALSE
 accessibilité,accessibility,TRUE,FALSE,TRUE
 agilité,agility,TRUE,TRUE,TRUE
@@ -8,25 +8,34 @@ architecture d'information,information architecture,TRUE,FALSE,FALSE
 arrimage,alignment,FALSE,TRUE,FALSE
 atelier,workshop,TRUE,FALSE,FALSE
 audience cible,target audience,FALSE,TRUE,FALSE
+besoins d'affaires,business needs,FALSE,TRUE,FALSE
+besoins utilisateurs,user needs,TRUE,TRUE,FALSE
+breffage,briefing,TRUE,TRUE,FALSE
 charge cognitive,cognitive load,TRUE,FALSE,FALSE
-chatbot,chatbot,FALSE,FALSE,TRUE
+robot conversationnel (chatbot),chatbot,FALSE,FALSE,TRUE
 CMS (content management system),CMS (content management system),FALSE,FALSE,TRUE
+cohérence,coherence,TRUE,FALSE,FALSE
+collaboration,collaboration,TRUE,TRUE,TRUE
 commerce électronique (e-commerce),e-commerce,FALSE,TRUE,TRUE
 composantes,components,TRUE,FALSE,TRUE
 conception axée sur l'utilisateur,user-centred design,TRUE,TRUE,FALSE
 conception réactive (responsive design),responsive design,TRUE,TRUE,TRUE
+contrôle de qualité (QA),quality control (QA),TRUE,FALSE,TRUE
 conversion,conversion,FALSE,TRUE,FALSE
 CRM (customer relationship management),CRM (customer relationship management),FALSE,TRUE,FALSE
 CTA (call to action),CTA (call to action),TRUE,TRUE,TRUE
 CTR (clickthrough rate),CTR (clickthrough rate),FALSE,TRUE,FALSE
 CX (customer experience),CX (customer experience),TRUE,TRUE,FALSE
+design écologique (ecodesign),ecodesign,TRUE,TRUE,FALSE
 design sprint,design sprint,TRUE,FALSE,FALSE
 design thinking,design thinking,TRUE,FALSE,FALSE
 design trompeur,deceptive design,TRUE,FALSE,TRUE
 diversité / équité / inclusion,"DEI (diversity, equity, and inclusion)",TRUE,TRUE,TRUE
+écoute,listening,TRUE,FALSE,FALSE
 empathie,empathy,TRUE,TRUE,TRUE
 engagement,engagement,FALSE,TRUE,FALSE
 entonnoir de conversion,conversion funnel,FALSE,TRUE,FALSE
+expertise interne,internal expertise,TRUE,FALSE,TRUE
 Figma,Figma,TRUE,FALSE,TRUE
 gabarits,templates,TRUE,FALSE,TRUE
 grille,grid,TRUE,FALSE,TRUE
@@ -37,10 +46,11 @@ implication,involvement,FALSE,TRUE,FALSE
 imputabilité,imputability,FALSE,TRUE,FALSE
 influenceur,influencer,FALSE,TRUE,FALSE
 infographique,infographic,TRUE,TRUE,FALSE
+innovation,innovation,TRUE,TRUE,TRUE
 intention de marque,brand purpose,FALSE,TRUE,FALSE
 intentionalité,intentionality,TRUE,TRUE,FALSE
 intervenants,stakeholders,FALSE,TRUE,FALSE
-KPI (key performance indicator),KPI (key performance indicator),FALSE,TRUE,FALSE
+Indicateur de performance (KPI),KPI (key performance indicator),FALSE,TRUE,FALSE
 leader d'opinion,thought leader,FALSE,TRUE,FALSE
 livrables,deliverables,TRUE,TRUE,TRUE
 maquettes,mockups,TRUE,FALSE,FALSE
@@ -51,6 +61,7 @@ marketing expérientiel,experiential marketing,FALSE,TRUE,FALSE
 médias acquis,earned media,FALSE,TRUE,FALSE
 mégadonnées (big data),big data,FALSE,TRUE,TRUE
 métriques,metrics,FALSE,TRUE,FALSE
+mise en ligne / mise en production,deployment,FALSE,FALSE,TRUE
 ML (machine learning),ML (machine learning),FALSE,TRUE,TRUE
 mobile-first,mobile-first,TRUE,TRUE,TRUE
 modèle de design,design pattern,TRUE,FALSE,FALSE
