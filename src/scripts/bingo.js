@@ -24,12 +24,13 @@ let rows = []; // contains buttons
 // dom elements
 let bingoCard;
 
-let bingoDialog;
-let veil;
-
 let marketingCB;
 let designCB;
 let techCB;
+let restartGameLink;
+
+let bingoDialog;
+let veil;
 let restartGameButton;
 
 
@@ -55,6 +56,7 @@ function getDOMElements() {
   marketingCB = document.getElementById('marketingCB');
   designCB = document.getElementById('designCB');
   techCB = document.getElementById('techCB');
+  restartGameLink = document.getElementById('restartGameLink');
 
   restartGameButton = document.getElementById('restartGameButton');
 }
@@ -144,10 +146,10 @@ function addOptionsListeners() {
 }
 
 function onOptionChanged() {
-  console.info('--- onOptionChanged ---');
   let scope = [];
 
   // check options
+  // TODO: check if necessary?
   if (marketingCB.checked) {
     scope.push('marketing');
   }
@@ -158,19 +160,15 @@ function onOptionChanged() {
     scope.push('tech');
   }
 
-  console.log('scope:', scope);
   let searchParamsValue = scope.join(',');
   if (!scope.length) {
     searchParamsValue = 'marketing';
   }
-  console.log('searchParamsValue:', searchParamsValue);
 
-  // push state to url
-  // TODO: https://stackoverflow.com/questions/10970078/modifying-a-query-string-without-reloading-the-page
-  // if (history.pushState) {
-    // var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?myNewUrlQuery=1';
-    // window.history.pushState({path:newurl},'',newurl);
-  // }
+  const newURL = new URL(window.location.href);
+  newURL.search = `?sujets=${ searchParamsValue }`;
+
+  restartGameLink.setAttribute('href', newURL.href);
 }
 
 
