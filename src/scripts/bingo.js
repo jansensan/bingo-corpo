@@ -29,8 +29,9 @@ let designCB;
 let techCB;
 let restartGameLink;
 
-let bingoDialog;
 let veil;
+let bingoDialog;
+let winningLabels;
 let restartGameButton;
 
 
@@ -58,6 +59,7 @@ function getDOMElements() {
   techCB = document.getElementById('techCB');
   restartGameLink = document.getElementById('restartGameLink');
 
+  winningLabels = document.getElementById('winningLabels');
   restartGameButton = document.getElementById('restartGameButton');
 }
 
@@ -237,7 +239,7 @@ function onTileClicked(event) {
 
   const response = checkForBingo();
   if (response.bingo) {
-    showGameComplete();
+    showGameComplete(response.labels);
   }
 }
 
@@ -245,6 +247,8 @@ function onTileClicked(event) {
 // game flow
 function checkForBingo() {
   const numTiles = 5;
+
+  const colsLabels = [[], [], [], [], []];
   const colsValues = [[], [], [], [], []];
 
   let response = {
@@ -255,21 +259,26 @@ function checkForBingo() {
   // go through rows
   let rowIndex = 0;
   rows.forEach(row => {
+    const rowLabels = [];
     const rowValues = [];
     const tiles = row.getElementsByClassName('bingo-tile');
     for (let i = 0; i < numTiles; i++) {
-      // save tile value in array for row
       const tile = tiles[i];
+
+      // save tile value in array for row
       rowValues.push(isTileElementStamped(tile));
+      rowLabels.push(tile.innerText);
 
       // save tile value in array for column, to check later
       colsValues[i][rowIndex] = isTileElementStamped(tile);
+      colsLabels[i][rowIndex] = tile.innerText;
     }
 
     // check for bingo at row
     if (rowValues.every(isItemTrue)) {
       response.bingo = true;
       response.type = BingoTypes.ROW;
+      response.labels = rowLabels;
     }
 
     rowIndex++;
@@ -281,11 +290,12 @@ function checkForBingo() {
 
 
   // go through columns
-  colsValues.forEach(values => {
+  colsValues.forEach((values, colIndex) => {
     // check for bingo at col
     if (values.every(isItemTrue)) {
       response.bingo = true;
       response.type = BingoTypes.COLUMN;
+      response.labels = colsLabels[colIndex];
     }
   });
 
@@ -295,17 +305,21 @@ function checkForBingo() {
 
 
   // check diagonals - top-left → bottom right
-  const diagonal1 = [];
+  const diag1Values = [];
+  const diag1Labels = [];
   rowIndex = 0;
   rows.forEach(row => {
     const tiles = row.getElementsByClassName('bingo-tile');
-    diagonal1.push(isTileElementStamped(tiles[rowIndex]));
+    const tile = tiles[rowIndex];
+    diag1Values.push(isTileElementStamped(tile));
+    diag1Labels.push(tile.innerText);
     rowIndex++;
   });
 
-  if (diagonal1.every(isItemTrue)) {
+  if (diag1Values.every(isItemTrue)) {
     response.bingo = true;
     response.type = BingoTypes.DIAGONAL;
+    response.labels = diag1Labels;
   }
 
   if (response.bingo) {
@@ -314,18 +328,22 @@ function checkForBingo() {
 
 
   // check diagonals - top-right → bottom left
-  const diagonal2 = [];
+  const diag2Values = [];
+  const diag2Labels = [];
   rowIndex = 0;
   rows.forEach(row => {
     const tiles = row.getElementsByClassName('bingo-tile');
     const tileIndex = numTiles - rowIndex - 1;
-    diagonal2.push(isTileElementStamped(tiles[tileIndex]));
+    const tile = tiles[tileIndex];
+    diag2Values.push(isTileElementStamped(tile));
+    diag2Labels.push(tile.innerText);
     rowIndex++;
   });
 
-  if (diagonal2.every(isItemTrue)) {
+  if (diag2Values.every(isItemTrue)) {
     response.bingo = true;
     response.type = BingoTypes.DIAGONAL;
+    response.labels = diag2Labels;
   }
 
   if (response.bingo) {
@@ -337,7 +355,14 @@ function checkForBingo() {
   return response;
 }
 
-function showGameComplete() {
+function showGameComplete(labels) {
+  winningLabels.innerText = '';
+  labels.forEach(label => {
+    const li = document.createElement('li');
+    li.innerText = label;
+    winningLabels.appendChild(li);
+  });
+
   veil.classList.remove('hidden');
   bingoDialog.showModal();
 
