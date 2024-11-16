@@ -277,7 +277,17 @@ a:hover {
 }
 
 .winning-labels {
-  
+  display: inline-block;
+  text-align: left;
+
+  li {
+    font-size: 14px;
+    line-height: 24px;
+
+    &::before {
+      content: '☑️ ';
+    }
+  }
 }
 
 .primary-button {
