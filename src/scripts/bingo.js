@@ -24,6 +24,7 @@ let rows = []; // contains buttons
 // dom elements
 let bingoCard;
 
+let corpoCB;
 let marketingCB;
 let designCB;
 let techCB;
@@ -41,7 +42,7 @@ initBingo();
 
 // methods definition
 function initBingo() {
-  lang = document.documentElement.lang
+  lang = document.documentElement.lang;
   getDOMElements();
   terms = parseData();
   addButtons(terms);
@@ -54,6 +55,7 @@ function getDOMElements() {
   bingoDialog = document.getElementById('bingoDialog');
   veil = document.getElementById('veil');
 
+  corpoCB = document.getElementById('corpoCB');
   marketingCB = document.getElementById('marketingCB');
   designCB = document.getElementById('designCB');
   techCB = document.getElementById('techCB');
@@ -107,11 +109,21 @@ function copyData() {
   let copy = [];
 
   if (
-    (scope && scope.includes('marketing'))
+    (scope && scope.includes('corpo'))
     || scope === undefined
   ) {
+    const corpo = BINGO_DATA.fr.corpo.slice();
+    copy.push(...corpo.slice());
+    corpoCB.checked = 'checked';
+  }
+
+  if (scope && scope.includes('marketing')) {
     const marketing = BINGO_DATA.fr.marketing.slice();
-    copy.push(...marketing.slice());
+    marketing.forEach(element => {
+      if (!copy.includes(element)) {
+        copy.push(element);
+      }
+    });
     marketingCB.checked = 'checked';
   }
 
@@ -142,6 +154,7 @@ function copyData() {
 
 // game options management
 function addOptionsListeners() {
+  corpoCB.addEventListener('change', onOptionChanged);
   marketingCB.addEventListener('change', onOptionChanged);
   designCB.addEventListener('change', onOptionChanged);
   techCB.addEventListener('change', onOptionChanged);
@@ -152,6 +165,9 @@ function onOptionChanged() {
 
   // check options
   // TODO: check if necessary?
+  if (corpoCB.checked) {
+    scope.push('corpo');
+  }
   if (marketingCB.checked) {
     scope.push('marketing');
   }
@@ -164,7 +180,7 @@ function onOptionChanged() {
 
   let searchParamsValue = scope.join(',');
   if (!scope.length) {
-    searchParamsValue = 'marketing';
+    searchParamsValue = 'corpo';
   }
 
   const newURL = new URL(window.location.href);

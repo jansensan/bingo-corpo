@@ -21,7 +21,7 @@ npm install
     a. Convertir le CSV
 
     ```
-    npm run parse-csv
+    npm run convert:csv
     ```
 
     b. Copier le nouvel objet JSON créé dans `src/data/data.json` vers `public/scripts/bingo-data.js`  
